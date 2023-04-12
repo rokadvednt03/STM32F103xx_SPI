@@ -34,18 +34,20 @@ int main(void)
 	
 	RCC->APB2ENR |= RCC_APB2ENR_SPI1EN;
 	
-	SPI1->CR1 |= SPI_CR1_SSM;
-	SPI1->CR1 |= (7<<3);
-	SPI1->CR1 |= SPI_CR1_SSI;
+	SPI1->CR1 &= ~SPI_CR1_SSM;
+	SPI1->CR1 |= (1<<3);
+	SPI1->CR2 |= SPI_CR2_SSOE;
 	SPI1->CR1 |= SPI_CR1_MSTR;
 	SPI1->CR1 |= SPI_CR1_SPE;
 	
-	while(len>0)
+	while(!(SPI1->SR & SPI_SR_TXE));
+	SPI1->DR = len ;
+	
+	while(len--)
 	{
 		while(!(SPI1->SR & SPI_SR_TXE));
 		SPI1->DR = *data;
 		data++;
-		len--;
 	}
 
 }
