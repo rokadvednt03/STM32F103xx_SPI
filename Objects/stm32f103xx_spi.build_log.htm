@@ -28,7 +28,7 @@ Project File Date:  04/08/2023
 *** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
 Build target 'Target 1'
 test.c(1): warning: In file included from...
-./stm32f103xx_gpio.h(1): warning: In file included from...
+./stm32f103xx_spi.h(12): warning: In file included from...
 C:/Users/rokad/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(18): warning: invalid UTF-8 in comment [-Winvalid-utf8]
   *              - To use or not the peripheral<92>s drivers in application code(i.e. 
                                                ^
@@ -39,14 +39,21 @@ C:/Users/rokad/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\s
   *           - Macros to access peripheral<92>s registers hardware
                                            ^
 test.c(1): warning: In file included from...
+./stm32f103xx_spi.h(14): warning: // comments are not allowed in this language [-Wcomment]
+/////////////////////////////////////////////////////////////////////////////////////////
+^
+test.c(2): warning: In file included from...
 ./stm32f103xx_gpio.h(97): warning: no newline at end of file [-Wnewline-eof]
 void GPIO_IRQHandling(uint8_t PinNumber);
                                          ^
-4 warnings generated.
+test.c(16): warning: mixing declarations and code is a C99 extension [-Wdeclaration-after-statement]
+        GPIO_Handle_t gpio;
+                      ^
+6 warnings generated.
 compiling test.c...
 linking...
-Program Size: Code=2456 RO-data=284 RW-data=0 ZI-data=1632  
-".\Objects\stm32f103xx_spi.axf" - 0 Error(s), 4 Warning(s).
+Program Size: Code=2792 RO-data=280 RW-data=0 ZI-data=1632  
+".\Objects\stm32f103xx_spi.axf" - 0 Error(s), 6 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -73,8 +80,8 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.6.0
 
    * Component: Keil::Device:Startup:1.0.0
-      Include file:  RTE_Driver/Config/RTE_Device.h
       Source file:   Device/Source/ARM/startup_stm32f10x_md.s
+      Include file:  RTE_Driver/Config/RTE_Device.h
       Source file:   Device/Source/system_stm32f10x.c
       Source file:   Device/Source/ARM/STM32F1xx_OPT.s
 Build Time Elapsed:  00:00:01

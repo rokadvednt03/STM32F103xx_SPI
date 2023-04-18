@@ -73,6 +73,7 @@ void GPIO_PeriClockControl(GPIO_TypeDef *pGPIOx , uint8_t EnorDi)
 
 void GPIO_Init(GPIO_Handle_t *pGPIOHandle)
 {
+	
 	if(pGPIOHandle->GPIO_PinConfig.GPIO_ModeInOut <= 3)
 	{
 		uint32_t temp1 , temp2;
