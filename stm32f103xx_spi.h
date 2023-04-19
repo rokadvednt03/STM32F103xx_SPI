@@ -87,7 +87,7 @@ void SPI_Init(SPI_Handle_t *pSPIHandler);
 void SPI_Enable(SPI_TypeDef *pSPIx);
 void SPI_SendData(SPI_TypeDef *pSPIx,uint8_t *pTxBuffer, uint32_t Len);
 uint8_t SPI_GetFlagStatus(SPI_TypeDef *pSPIx , uint32_t FlagName);
-void SPI_MasterReceiveData(SPI_Handle_t *pSPIHandler , uint8_t *pRxBuffer , uint32_t len ,uint8_t Slaveaddr);
+void SPI_ReceiveData(SPI_TypeDef *pSPIx, uint8_t *pRxBuffer, uint32_t Len);
 
 void SPI_Mem_Write(SPI_Handle_t *pSPIHandler , uint8_t Slaveaddr , uint8_t MemAddr ,uint8_t MemAddrSize ,uint8_t *pTxBuffer);
 void SPI_Mem_Read(SPI_Handle_t *pSPIHandler , uint8_t Slaveaddr , uint8_t MemAddr ,uint8_t MemAddrSize ,uint8_t *pRxBuffer);
